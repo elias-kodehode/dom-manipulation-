@@ -1,9 +1,5 @@
 :root{
     --bg-color: hsl(0, 0%, 0%);
-    --card-color: hsl(from var(--bg-color) h calc(s + 0) calc(l + 20));
-
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
 }
 
 *,*::before,*::after{
@@ -14,21 +10,40 @@
 
 body{
     background-color: var(--bg-color);
+    height: 100vh;
 }
 
 
-/* Standard Breakpoints */
-/* Mobile First Approach */
-@media (min-width: 320px)  { /* Mobile Small */ }
-@media (min-width: 480px)  { /* Mobile Large */ }
-@media (min-width: 768px)  { /* Tablet */ }
-@media (min-width: 1024px) { /* Desktop */ }
-@media (min-width: 1200px) { /* Large Desktop */ }
-@media (min-width: 1440px) { /* Extra Large */ }
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
-/* Desktop First Approach */
-@media (max-width: 1439px) { /* Below XL */ }
-@media (max-width: 1199px) { /* Below Large */ }
-@media (max-width: 1023px) { /* Below Desktop */ }
-@media (max-width: 767px)  { /* Below Tablet */ }
-@media (max-width: 479px)  { /* Below Mobile Large */ }
+.circle{
+    display: flex;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    background-color: orange;
+    border-radius: 100%;
+}
+
+.circle::before, .circle::after{
+    content: "";
+    background-color: inherit;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top: 50%;
+    left: 50%;
+    /* padding: 15px; */
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: -100;
+    filter: blur(5px);
+}
