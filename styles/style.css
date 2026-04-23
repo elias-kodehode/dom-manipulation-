@@ -76,11 +76,12 @@ body{
     gap: 5px;
 }
 
+ul{
+    margin: 20px;
+}
+
 fieldset{
     width: 200px;
     padding: 2px;
     border-radius: 5px;
-}
-legend{
-    text-align: center;
 }
