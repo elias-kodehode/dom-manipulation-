@@ -1,17 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="./src/app.js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
+    <div id="draggable" class="circle" draggable="true">drag me</div>
     <div class="container">
-        
+      <div class="hue-shift-container" draggable="false"></div>
+
+      <div class="controls">
+        <fieldset id="speed-controls">
+          <legend>Speed controls</legend>
+          <div class="stack">
+            <label id="speed-display"></label>
+            <button id="speed-up">Increase</button>
+            <button id="speed-down">Decrease</button>
+            <button id="reset">Reset</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Controls</legend>
+          <div class="stack">
+            <button id="add-circle">Add circle</button>
+          </div>
+        </fieldset>
+      </div>
     </div>
-</body>
+  </body>
 </html>
