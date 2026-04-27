@@ -33,6 +33,13 @@ body{
 
 
 
+.weather-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* place-items: center; */  
+    /* gap: 5px; */
+}
+
 .circle{
     display: flex;
     position: relative;
@@ -92,7 +99,7 @@ fieldset{
     border-radius: 5px;
 }
 
-
+/* 
 .weather-component{
     display: flex;
     flex-direction: column;
@@ -132,4 +139,4 @@ fieldset{
 }
 .weather-component button:active{
     background-color: white;
-}
+} */

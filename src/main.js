@@ -1,7 +1,8 @@
 import * as sineWave from "./sineBall.js";
-import * as weather from "./weather.js";
+// import * as weather from "./weather.js";
 import * as circles from "./circles.js";
 import * as draggableCircle from "./draggableCircle.js";
+import * as weatherComponent from "./WeatherComponent.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -11,7 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function OnLoad(){
     sineWave.startSineWave();
     circles.setupCircles(15);
-    await weather.getWeather();
+    
+    // await weather.getWeather("Ørsta");
 }
 
 

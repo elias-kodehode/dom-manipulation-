@@ -8,10 +8,67 @@
     <title>Document</title>
   </head>
   <body>
+    <template id="weather-component-template">
+      <style>
+        .weather-component {
+          display: flex;
+          flex-direction: column;
+          background-color: hsl(0, 0%, 5%);
+          max-width: fit-content;
+          padding: 15px;
+          border-radius: 20px;
+          margin: 20px;
+          border: 1px solid hsla(0, 0%, 20%);
+          box-shadow: 0px 0px 5px hsla(0, 0%, 50%, 0.5);
+          gap: 10px;
+        }
+
+        .weather-component button {
+          border-radius: 20px;
+          padding: 5px;
+          background-color: hsl(0, 90%, 0%);
+          border: 1px solid hsl(0, 0%, 40%);
+          color: white;
+          transition: all 0.3s;
+        }
+
+        .weather-component button:hover {
+          background-color: hsl(0, 0%, 40%);
+        }
+
+        .weather-component div {
+          display: flex;
+          flex-grow: 1;
+          gap: 5px;
+        }
+
+        .weather-component .feels-like {
+          color: gray;
+          font-size: 0.9rem;
+        }
+        .weather-component button:active {
+          background-color: white;
+        }
+      </style>
+
+      <div class="weather-component">
+        <h2 id="city"></h2>
+        <div>
+          <img
+            id="icon"
+            src="https://www.xweather.com/docs/_next/static/media/sunny.6a4b36a4.png?dpl=dpl_Aj6B5LUFi4NmN2NNNMuj9VPj7zYc"
+            width="56px"
+          />
+          <p class="temp" id="temp"></p>
+          <p class="feels-like" id="feels-like"></p>
+        </div>
+        <button id="refresh">Refresh</button>
+      </div>
+    </template>
+
     <div id="draggable" class="circle" draggable="true">drag me</div>
     <div class="circle" id="sine">Sine</div>
     <div class="container">
-
       <div class="controls">
         <fieldset id="speed-controls">
           <legend>Speed controls</legend>
@@ -31,27 +88,13 @@
         </fieldset>
       </div>
 
-      <div class="weather-component">
-        <h2>Ørsta</h2>
-        <div>
-          <img
-            src="https://www.xweather.com/docs/_next/static/media/sunny.6a4b36a4.png?dpl=dpl_Aj6B5LUFi4NmN2NNNMuj9VPj7zYc"
-            width="56px"
-          />
-          <p class="temp">10c</p>
-          <p class="feels-like"></p>
-        </div>
-        <button id="refresh"">Refresh</button>
+      <div class="weather-grid">
+        <weather-component city="Ørsta"> </weather-component>
+        <weather-component city="Ulsteinvik"> </weather-component>
+        <weather-component city="Ålesund"> </weather-component>
       </div>
 
       <div class="hue-shift-container" draggable="false"></div>
-
-
-
-
     </div>
-
-
-
   </body>
 </html>
