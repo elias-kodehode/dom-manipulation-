@@ -42,27 +42,26 @@ body{
     border-radius: 100%;
     justify-content: center;
     align-items: center;
-}
 
+}
 
 .circle::before, .circle::after{
     content: "";
     background-color: inherit;
     position: absolute;
-    width: 4rem;
-    height: 4rem;
+    width: 4.1rem;
+    height: 4.1rem;
     top: 50%;
     left: 50%;
-    /* padding: 15px; */
     transform: translate(-50%, -50%);
     border-radius: 100%;
-    z-index: -100;
-    filter: blur(5px);
+    z-index:-100;
+    filter: blur(10px);
+    animation: spin 1s infinite ease-in;
 }
-
 #draggable{
     position: absolute;
-    z-index: 100;
+    z-index: 1;
 }
 
 #sine{

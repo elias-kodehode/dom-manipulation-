@@ -1,18 +1,26 @@
-const weatherComponent = document.querySelector(".weather-component");
-const p = weatherComponent.querySelectorAll("p")[0];
-const p_feelsLike = weatherComponent.querySelectorAll("p")[1];
+import * as ui from "./ui.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
-    getWeather();
+document.addEventListener("refresh-weather", async () => {
+    await getWeather();
 });
 
-async function getWeather(){
+async function fetchWeather(){
 
     const url = "https://api.open-meteo.com/v1/forecast?latitude=62.1998&longitude=6.129&current=temperature_2m,apparent_temperature&timezone=auto&past_days=0&forecast_days=1";
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
 
-    p.textContent = data.current.temperature_2m  + "°C";
-    p_feelsLike.textContent = data.current.apparent_temperature + "°C";
+    return {
+        temperature: data.current.temperature_2m,
+        feels_like: data.current.apparent_temperature
+    }
+}
+
+
+export async function getWeather(){
+        console.log("fetching weather...");
+        const weather = await fetchWeather();
+    
+        console.log(weather);
+        ui.setTemperature(weather);
 }

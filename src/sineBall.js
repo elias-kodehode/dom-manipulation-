@@ -13,7 +13,7 @@ function sineWave(currentTime){
 
     const amplitude = 150;
     const frequency = 5;
-    const heightOffset = 100;
+    const heightOffset = 200;
     const y = amplitude * Math.sin(frequency * time);
 
     sineBall.style.top = `${y + heightOffset}px`;
@@ -21,6 +21,12 @@ function sineWave(currentTime){
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+export function startSineWave(){
     requestAnimationFrame(sineWave);
-});
+}
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     requestAnimationFrame(sineWave);
+// });
