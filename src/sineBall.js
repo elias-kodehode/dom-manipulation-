@@ -1,4 +1,4 @@
-const sineBall = document.getElementById("sine");
+let sineBall;
 // last recorded time
 let last = 0;
 
@@ -22,11 +22,6 @@ function sineWave(currentTime){
 
 
 export function startSineWave(){
+    sineBall = document.getElementById("sine");
     requestAnimationFrame(sineWave);
 }
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     requestAnimationFrame(sineWave);
-// });
